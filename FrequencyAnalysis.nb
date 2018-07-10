@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    235898,       5644]
-NotebookOptionsPosition[    232455,       5592]
-NotebookOutlinePosition[    232809,       5608]
-CellTagsIndexPosition[    232766,       5605]
+NotebookDataLength[    252078,       6049]
+NotebookOptionsPosition[    247714,       5986]
+NotebookOutlinePosition[    248068,       6002]
+CellTagsIndexPosition[    248025,       5999]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -50,11 +50,11 @@ Cell[BoxData[
  CellLabel->"In[11]:=",ExpressionUUID->"e69a6601-47c0-4323-ad0d-cb721b3f6e77"],
 
 Cell["\<\
-The house descriptions stemmed without stopwords or numerical values:\
+The house descriptions without stopwords or numerical values:\
 \>", "CodeText",
  CellChangeTimes->{{3.7400553718653*^9, 3.7400553730888853`*^9}, {
-  3.7401658216236753`*^9, 
-  3.740165832365254*^9}},ExpressionUUID->"4721a475-c3c7-406d-a452-\
+   3.7401658216236753`*^9, 3.740165832365254*^9}, 
+   3.7402278418724737`*^9},ExpressionUUID->"4721a475-c3c7-406d-a452-\
 22d8f6039459"],
 
 Cell[BoxData[
@@ -67,11 +67,10 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"Select", "[", 
          RowBox[{
-          RowBox[{"WordStem", "@", 
-           RowBox[{"TextWords", "@", 
-            RowBox[{"ToLowerCase", "@", 
-             RowBox[{"DeleteStopwords", "@", 
-              RowBox[{"First", "[", "#", "]"}]}]}]}]}], ",", 
+          RowBox[{"TextWords", "@", 
+           RowBox[{"ToLowerCase", "@", 
+            RowBox[{"DeleteStopwords", "@", 
+             RowBox[{"First", "[", "#", "]"}]}]}]}], ",", 
           RowBox[{
            RowBox[{"!", 
             RowBox[{"StringContainsQ", "[", 
@@ -89,8 +88,9 @@ Cell[BoxData[
   ";"}]], "Input",
  CellChangeTimes->{{3.74005503467776*^9, 3.740055039020647*^9}, {
    3.7400551063932858`*^9, 3.740055118338038*^9}, 3.74005516578902*^9, {
-   3.7400552221854486`*^9, 3.740055226571369*^9}, 3.740055438621233*^9},
- CellLabel->"In[23]:=",ExpressionUUID->"7f34cee2-254c-4eed-a034-f7ade1d975d1"],
+   3.7400552221854486`*^9, 3.740055226571369*^9}, 3.740055438621233*^9, 
+   3.740227834103421*^9},ExpressionUUID->"7f34cee2-254c-4eed-a034-\
+f7ade1d975d1"],
 
 Cell["\<\
 A neural net from the Wolfram Neural Net Repository for feature extraction of \
@@ -5588,6 +5588,400 @@ Cell[BoxData[
    3.7399042663788357`*^9, 3.740056621264511*^9, 3.740166256563938*^9, {
    3.740166323220393*^9, 3.740166332338572*^9}},
  CellLabel->"Out[40]=",ExpressionUUID->"942c04fe-840d-4ec5-a764-e4fdb28fbba0"]
+}, Open  ]],
+
+Cell["\<\
+A de-stemmed selection of some of the most influential words:\
+\>", "CodeText",
+ CellChangeTimes->{{3.740242012762096*^9, 
+  3.7402420346105137`*^9}},ExpressionUUID->"d467541d-4770-4c1f-8506-\
+5a2cb48d0a5e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"negative", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<wharf\>\"", ",", "\"\<zone\>\"", ",", "\"\<valet\>\"", ",", 
+     "\"\<harbor\>\"", ",", "\"\<service\>\"", ",", "\"\<residential\>\"", 
+     ",", "\"\<hour\>\"", ",", "\"\<total\>\"", ",", "\"\<lease\>\"", ",", 
+     "\"\<interior\>\"", ",", "\"\<concierge\>\"", ",", "\"\<lounge\>\"", 
+     ",", "\"\<beacon\>\"", ",", "\"\<west\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"positive", " ", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<sun-filled\>\"", ",", "\"\<welcome\>\"", ",", "\"\<white\>\"", ",", 
+     "\"\<wonder\>\"", ",", "\"\<best\>\"", ",", "\"\<summer\>\"", ",", 
+     "\"\<green\>\"", ",", "\"\<right\>\"", ",", "\"\<multiple\>\"", ",", 
+     "\"\<stove\>\"", ",", "\"\<warm\>\"", ",", "\"\<possible\>\"", ",", 
+     "\"\<fence\>\"", ",", "\"\<dishwasher\>\"", ",", "\"\<move\>\"", ",", 
+     "\"\<cafe\>\"", ",", "\"\<backsplash\>\"", ",", "\"\<charm\>\"", ",", 
+     "\"\<nestled\>\"", ",", "\"\<fantastic\>\"", ",", "\"\<truly\>\"", ",", 
+     "\"\<off-street\>\"", ",", "\"\<fabulous\>\"", ",", "\"\<siena\>\"", 
+     ",", "\"\<due\>\"", ",", "\"\<stylish\>\"", ",", "\"\<value\>\"", ",", 
+     "\"\<oasis\>\"", ",", "\"\<monument\>\"", ",", "\"\<fan\>\"", ",", 
+     "\"\<nursery\>\"", ",", "\"\<mantel\>\"", ",", "\"\<relax\>\"", ",", 
+     "\"\<tree\>\"", ",", "\"\<review\>\"", ",", "\"\<directly\>\""}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"allWords", " ", "=", " ", 
+   RowBox[{"Join", "[", 
+    RowBox[{"negative", ",", "positive"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7399914889112673`*^9, 3.739991524003427*^9}, {
+  3.739991897909725*^9, 3.739991899091454*^9}, {3.7399919492189302`*^9, 
+  3.739991985387291*^9}, {3.739992165621297*^9, 3.7399921660537024`*^9}, {
+  3.739992445077278*^9, 3.739992450753107*^9}, {3.7399929922214823`*^9, 
+  3.739992996681422*^9}, {3.739993324974264*^9, 3.7399933299839582`*^9}, {
+  3.740242038262271*^9, 3.7402420572706327`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"0b1f23c3-fcdd-43c7-ab7f-5916bd7afc31"],
+
+Cell["\<\
+Each word and a weight that will be used to size the word in a word cloud:\
+\>", "CodeText",
+ CellChangeTimes->{{3.740242116582322*^9, 
+  3.740242119904141*^9}},ExpressionUUID->"6594af1c-6a14-466c-afd1-\
+95dc13e2b927"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"positiveAssoc", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"positive", ",", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "72", ",", "2"}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"negativeAssoc", "=", " ", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"negative", ",", 
+     RowBox[{"Reverse", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"5", ",", "70", ",", "5"}], "]"}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"weights", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Values", "[", "negativeAssoc", "]"}], ",", 
+     RowBox[{"Values", "[", "positiveAssoc", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wordToWeight", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"allWords", ",", "weights"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7402331204156713`*^9, 3.740233146174232*^9}, 
+   3.7402337797337847`*^9, {3.7402421264972277`*^9, 3.740242155222439*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"88c8953b-e303-4b85-8bb1-34198c1c64af"],
+
+Cell["\<\
+The color of each word in the word cloud, red for negative words and green \
+for positive words:\
+\>", "CodeText",
+ CellChangeTimes->{{3.740242162669446*^9, 
+  3.7402421760295067`*^9}},ExpressionUUID->"50a813f2-b435-4c52-b1fb-\
+f143177b89e8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"colors", " ", "=", " ", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Length", "[", "negative", "]"}]}], "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{"Green", ",", 
+       RowBox[{"Length", "[", "positive", "]"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wordToColor", " ", "=", " ", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"allWords", ",", "colors"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.740233711147151*^9, 3.740233768901362*^9}, {
+  3.74024217995306*^9, 3.740242180726429*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"0951ca22-c891-4a23-93cb-c83fff3df71a"],
+
+Cell["\<\
+A word cloud for the most frequent words and their relative success, red for \
+unsuccessful words and green for successful words. The larger the word, the \
+worse or better the word did.\
+\>", "CodeText",
+ CellChangeTimes->{{3.7402421864389887`*^9, 
+  3.740242238399096*^9}},ExpressionUUID->"e999faab-bb41-44ca-930c-\
+9d2ca8721e5c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WordCloud", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"wordToColor", "[", "#", "]"}]}], "]"}], ",", 
+      RowBox[{"wordToWeight", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+   "allWords"}], "]"}]], "Input",
+ CellChangeTimes->{{3.740233835384183*^9, 3.740233883887219*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"fcc5b493-0b93-4732-a6f8-4921adb436c1"],
+
+Cell[BoxData[
+ GraphicsBox[{InsetBox[
+    StyleBox["\<\"directly\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.14056224899598393`],
+     FontColor->RGBColor[0, 1, 0]], {0, 0}, Center, Automatic], InsetBox[
+    StyleBox["\<\"monument\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.11646586345381525`],
+     FontColor->RGBColor[0, 1, 0]], {-1.5, -51.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"nursery\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.12335054503729202`],
+     FontColor->RGBColor[0, 1, 0]], {1.5, 53.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"review\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.13711990820424555`],
+     FontColor->RGBColor[0, 1, 0]], {-5.5, 93.5}, Center, Automatic], InsetBox[
+    StyleBox["\<\"wharf\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.13884107860011471`],
+     FontColor->RGBColor[1, 0, 0]], {0.5, -103.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"mantel\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.1267928858290304],
+     FontColor->RGBColor[0, 1, 0]], {-1.5, 144.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"residential\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.09581181870338497],
+     FontColor->RGBColor[1, 0, 0]], {-0.5, -148.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"harbor\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.11302352266207687`],
+     FontColor->RGBColor[1, 0, 0]], {-45.5, 181.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"relax\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.13023522662076878`],
+     FontColor->RGBColor[0, 1, 0]], {-107.5, -184.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"off-street\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.09236947791164658],
+     FontColor->RGBColor[0, 1, 0]], {59.5, -187.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"fabulous\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.09581181870338497],
+     FontColor->RGBColor[0, 1, 0]], {125.5, 191.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"service\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.10441767068273092`],
+     FontColor->RGBColor[1, 0, 0]], {-166.5, -95.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"stylish\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.1061388410786001],
+     FontColor->RGBColor[0, 1, 0]], {-171.5, 35.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"valet\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.12162937464142282`],
+     FontColor->RGBColor[1, 0, 0]], {167.5, 34.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"backsplash\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.07515777395295467],
+     FontColor->RGBColor[0, 1, 0]], {-13.5, -223.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"fantastic\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.08548479632816981],
+     FontColor->RGBColor[0, 1, 0]], {166.5, -90.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"oasis\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.11302352266207687`],
+     FontColor->RGBColor[0, 1, 0]], {-176.5, -9.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"value\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.10958118187033848`],
+     FontColor->RGBColor[0, 1, 0]], {160.5, 87.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"tree\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.13367756741250716`],
+     FontColor->RGBColor[0, 1, 0]], {-157.5, 82.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"zone\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.13023522662076878`],
+     FontColor->RGBColor[1, 0, 0]], {160.5, 132.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"dishwasher\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.06483075157773951],
+     FontColor->RGBColor[0, 1, 0]], {-42.5, 220.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"siena\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.09925415949512334],
+     FontColor->RGBColor[0, 1, 0]], {185.5, -8.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"nestled\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.08204245553643143],
+     FontColor->RGBColor[0, 1, 0]], {-160.5, 125.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"fan\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.11990820424555364`],
+     FontColor->RGBColor[0, 1, 0]], {-189.5, -58.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"charm\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.07860011474469306],
+     FontColor->RGBColor[0, 1, 0]], {189.5, -49.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"due\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.10269650028686172`],
+     FontColor->RGBColor[0, 1, 0]], {150.5, -129.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"truly\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.0889271371199082],
+     FontColor->RGBColor[0, 1, 0]], {-151.5, -134.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"hour\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.087205966724039],
+     FontColor->RGBColor[1, 0, 0]], {-170.5, 158.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"concierge\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.05278255880665519],
+     FontColor->RGBColor[1, 0, 0]], {110.5, 223.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"possible\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.05794606999426276],
+     FontColor->RGBColor[0, 1, 0]], {133.5, -218.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"interior\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.061388410786001144`],
+     FontColor->RGBColor[1, 0, 0]], {-174.5, 188.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"total\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.07860011474469306],
+     FontColor->RGBColor[1, 0, 0]], {194.5, -163.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"lease\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.06999426276534709],
+     FontColor->RGBColor[1, 0, 0]], {-149.5, -218.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"cafe\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.07171543316121629],
+     FontColor->RGBColor[0, 1, 0]], {-209.5, -161.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"fence\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.061388410786001144`],
+     FontColor->RGBColor[0, 1, 0]], {-163.5, 214.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"multiple\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.047619047619047616`],
+     FontColor->RGBColor[0, 1, 0]], {199.5, -189.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"move\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.0682730923694779],
+     FontColor->RGBColor[0, 1, 0]], {41.5, 244.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"lounge\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.04417670682730923],
+     FontColor->RGBColor[1, 0, 0]], {-38.5, 243.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"stove\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.051061388410785995`],
+     FontColor->RGBColor[0, 1, 0]], {127.5, 160.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"warm\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.05450372920252438],
+     FontColor->RGBColor[0, 1, 0]], {33.5, -247.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"beacon\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.03557085484796328],
+     FontColor->RGBColor[1, 0, 0]], {189.5, 159.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"green\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.040734366035570846`],
+     FontColor->RGBColor[0, 1, 0]], {-36.5, -244.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"right\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.04417670682730923],
+     FontColor->RGBColor[0, 1, 0]], {214.5, -117.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"summer\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.037292025243832475`],
+     FontColor->RGBColor[0, 1, 0]], {101.5, -243.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"wonder\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.030407343660355704`],
+     FontColor->RGBColor[0, 1, 0]], {-222.5, -122.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"welcome\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.02352266207687894],
+     FontColor->RGBColor[0, 1, 0]], {4.5, -75.5}, Center, Automatic], InsetBox[
+    StyleBox["\<\"best\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.03384968445209409],
+     FontColor->RGBColor[0, 1, 0]], {124.5, -155.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"sun-filled\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.020080321285140562`],
+     FontColor->RGBColor[0, 1, 0]], {-3.5, -27.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"white\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.026965002868617326`],
+     FontColor->RGBColor[0, 1, 0]], {-50.5, -76.5}, Center, Automatic], 
+   InsetBox[
+    StyleBox["\<\"west\"\>",
+     StripOnInput->False,
+     FontSize->Scaled[0.026965002868617326`],
+     FontColor->RGBColor[1, 0, 0]], {-23.5, 27.5}, Center, Automatic]},
+  DefaultBaseStyle->{"Graphics", FontFamily -> "Helvetica"},
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic},
+  PlotRange->{{-251., 247.}, {-258., 257.}}]], "Output",
+ CellChangeTimes->{3.740242240319209*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"db922d25-ddcb-4c68-a4c7-4c93121c7809"]
 }, Open  ]]
 },
 WindowSize->{799, 738},
@@ -5610,41 +6004,52 @@ Notebook[{
 Cell[558, 20, 557, 9, 81, "Text",ExpressionUUID->"948d0e25-1972-437c-b6a2-9402e0e08063"],
 Cell[1118, 31, 351, 7, 59, "CodeText",ExpressionUUID->"b696944c-eeb3-4b37-9dfc-649fbf29ce6b"],
 Cell[1472, 40, 546, 9, 30, "Input",ExpressionUUID->"e69a6601-47c0-4323-ad0d-cb721b3f6e77"],
-Cell[2021, 51, 274, 6, 38, "CodeText",ExpressionUUID->"4721a475-c3c7-406d-a452-22d8f6039459"],
-Cell[2298, 59, 1346, 33, 115, "Input",ExpressionUUID->"7f34cee2-254c-4eed-a034-f7ade1d975d1"],
-Cell[3647, 94, 240, 6, 38, "CodeText",ExpressionUUID->"123d15ab-cdc7-4188-9fc0-7b103de31843"],
-Cell[3890, 102, 487, 11, 73, "Input",ExpressionUUID->"08c4b6b5-d9d3-4751-9390-7a125512309b",
+Cell[2021, 51, 292, 6, 38, "CodeText",ExpressionUUID->"4721a475-c3c7-406d-a452-22d8f6039459"],
+Cell[2316, 59, 1308, 33, 115, "Input",ExpressionUUID->"7f34cee2-254c-4eed-a034-f7ade1d975d1"],
+Cell[3627, 94, 240, 6, 38, "CodeText",ExpressionUUID->"123d15ab-cdc7-4188-9fc0-7b103de31843"],
+Cell[3870, 102, 487, 11, 73, "Input",ExpressionUUID->"08c4b6b5-d9d3-4751-9390-7a125512309b",
  CellID->547578203],
-Cell[4380, 115, 226, 5, 38, "CodeText",ExpressionUUID->"42110363-679a-43ec-a6ac-66085c6a2a3c"],
-Cell[4609, 122, 1356, 27, 52, "Input",ExpressionUUID->"2e15a2e8-43e8-4194-940f-5e59b43c3a99"],
-Cell[5968, 151, 390, 7, 59, "CodeText",ExpressionUUID->"400d1c19-b187-4090-b828-a85149bdaa06"],
-Cell[6361, 160, 1009, 26, 52, "Input",ExpressionUUID->"4a0f43f4-436f-4847-9222-fc7c561bb4b0"],
-Cell[7373, 188, 453, 7, 38, "CodeText",ExpressionUUID->"6d30d63e-ed79-46f0-b10f-2a0dd9e13dac"],
-Cell[7829, 197, 532, 12, 30, "Input",ExpressionUUID->"f948f4a6-4450-402d-b1ba-a58ed27856a6"],
-Cell[8364, 211, 297, 7, 38, "CodeText",ExpressionUUID->"afaaa187-1fb2-4bab-a600-2c26d63910cf"],
-Cell[8664, 220, 900, 19, 52, "Input",ExpressionUUID->"274ef190-fd22-43ee-94bc-e9efddc048fa"],
-Cell[9567, 241, 379, 6, 38, "CodeText",ExpressionUUID->"c2e37989-48be-4f20-b9f6-76665afd33d5"],
-Cell[9949, 249, 534, 12, 30, "Input",ExpressionUUID->"63975a3f-746e-4c89-bb68-007952174160"],
-Cell[10486, 263, 347, 7, 38, "CodeText",ExpressionUUID->"eb35d0de-7532-4570-bf23-be53b8962fc9"],
-Cell[10836, 272, 903, 19, 52, "Input",ExpressionUUID->"057c043b-2afc-4949-a2b4-cee251c677d5"],
-Cell[11742, 293, 306, 7, 38, "CodeText",ExpressionUUID->"5002a7e5-e70a-493b-84aa-1e634ee232ae"],
-Cell[12051, 302, 587, 11, 30, "Input",ExpressionUUID->"f0a273ff-13cd-4331-a071-16a6e918918c"],
-Cell[12641, 315, 205, 3, 38, "CodeText",ExpressionUUID->"7ccd3dc1-144e-4dd9-9256-aebeea4effc3"],
-Cell[12849, 320, 497, 12, 30, "Input",ExpressionUUID->"014f9363-c334-400a-804c-94ae3ac7e883"],
-Cell[13349, 334, 316, 7, 59, "CodeText",ExpressionUUID->"2d3c7346-31d9-4369-bfde-386e0a0cb09e"],
+Cell[4360, 115, 226, 5, 38, "CodeText",ExpressionUUID->"42110363-679a-43ec-a6ac-66085c6a2a3c"],
+Cell[4589, 122, 1356, 27, 52, "Input",ExpressionUUID->"2e15a2e8-43e8-4194-940f-5e59b43c3a99"],
+Cell[5948, 151, 390, 7, 59, "CodeText",ExpressionUUID->"400d1c19-b187-4090-b828-a85149bdaa06"],
+Cell[6341, 160, 1009, 26, 52, "Input",ExpressionUUID->"4a0f43f4-436f-4847-9222-fc7c561bb4b0"],
+Cell[7353, 188, 453, 7, 38, "CodeText",ExpressionUUID->"6d30d63e-ed79-46f0-b10f-2a0dd9e13dac"],
+Cell[7809, 197, 532, 12, 30, "Input",ExpressionUUID->"f948f4a6-4450-402d-b1ba-a58ed27856a6"],
+Cell[8344, 211, 297, 7, 38, "CodeText",ExpressionUUID->"afaaa187-1fb2-4bab-a600-2c26d63910cf"],
+Cell[8644, 220, 900, 19, 52, "Input",ExpressionUUID->"274ef190-fd22-43ee-94bc-e9efddc048fa"],
+Cell[9547, 241, 379, 6, 38, "CodeText",ExpressionUUID->"c2e37989-48be-4f20-b9f6-76665afd33d5"],
+Cell[9929, 249, 534, 12, 30, "Input",ExpressionUUID->"63975a3f-746e-4c89-bb68-007952174160"],
+Cell[10466, 263, 347, 7, 38, "CodeText",ExpressionUUID->"eb35d0de-7532-4570-bf23-be53b8962fc9"],
+Cell[10816, 272, 903, 19, 52, "Input",ExpressionUUID->"057c043b-2afc-4949-a2b4-cee251c677d5"],
+Cell[11722, 293, 306, 7, 38, "CodeText",ExpressionUUID->"5002a7e5-e70a-493b-84aa-1e634ee232ae"],
+Cell[12031, 302, 587, 11, 30, "Input",ExpressionUUID->"f0a273ff-13cd-4331-a071-16a6e918918c"],
+Cell[12621, 315, 205, 3, 38, "CodeText",ExpressionUUID->"7ccd3dc1-144e-4dd9-9256-aebeea4effc3"],
+Cell[12829, 320, 497, 12, 30, "Input",ExpressionUUID->"014f9363-c334-400a-804c-94ae3ac7e883"],
+Cell[13329, 334, 316, 7, 59, "CodeText",ExpressionUUID->"2d3c7346-31d9-4369-bfde-386e0a0cb09e"],
 Cell[CellGroupData[{
-Cell[13690, 345, 811, 20, 73, "Input",ExpressionUUID->"9988f2b0-05ea-4edd-b2af-6afcd0567320"],
-Cell[14504, 367, 205721, 5017, 377, 184332, 4666, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"de302ef5-f23b-4bc0-bc3a-4c9fafc243f3"]
+Cell[13670, 345, 811, 20, 73, "Input",ExpressionUUID->"9988f2b0-05ea-4edd-b2af-6afcd0567320"],
+Cell[14484, 367, 205721, 5017, 377, 184332, 4666, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"de302ef5-f23b-4bc0-bc3a-4c9fafc243f3"]
 }, Open  ]],
-Cell[220240, 5387, 259, 6, 38, "CodeText",ExpressionUUID->"83e15295-33f1-4737-b9dd-c49ac78a514c"],
+Cell[220220, 5387, 259, 6, 38, "CodeText",ExpressionUUID->"83e15295-33f1-4737-b9dd-c49ac78a514c"],
 Cell[CellGroupData[{
-Cell[220524, 5397, 882, 16, 30, "Input",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
-Cell[221409, 5415, 698, 12, 56, "Output",ExpressionUUID->"e780b1b7-7b05-441c-87e2-8aaf24bed177"]
+Cell[220504, 5397, 882, 16, 30, "Input",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
+Cell[221389, 5415, 698, 12, 56, "Output",ExpressionUUID->"e780b1b7-7b05-441c-87e2-8aaf24bed177"]
 }, Open  ]],
-Cell[222122, 5430, 255, 6, 38, "CodeText",ExpressionUUID->"be08d152-f07d-42a7-818f-93f6f77c8f9e"],
+Cell[222102, 5430, 255, 6, 38, "CodeText",ExpressionUUID->"be08d152-f07d-42a7-818f-93f6f77c8f9e"],
 Cell[CellGroupData[{
-Cell[222402, 5440, 854, 16, 30, "Input",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
-Cell[223259, 5458, 9180, 131, 707, "Output",ExpressionUUID->"942c04fe-840d-4ec5-a764-e4fdb28fbba0"]
+Cell[222382, 5440, 854, 16, 30, "Input",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
+Cell[223239, 5458, 9180, 131, 707, "Output",ExpressionUUID->"942c04fe-840d-4ec5-a764-e4fdb28fbba0"]
+}, Open  ]],
+Cell[232434, 5592, 217, 5, 38, "CodeText",ExpressionUUID->"d467541d-4770-4c1f-8506-5a2cb48d0a5e"],
+Cell[232654, 5599, 2139, 38, 178, "Input",ExpressionUUID->"0b1f23c3-fcdd-43c7-ab7f-5916bd7afc31"],
+Cell[234796, 5639, 228, 5, 38, "CodeText",ExpressionUUID->"6594af1c-6a14-466c-afd1-95dc13e2b927"],
+Cell[235027, 5646, 1126, 29, 94, "Input",ExpressionUUID->"88c8953b-e303-4b85-8bb1-34198c1c64af"],
+Cell[236156, 5677, 252, 6, 38, "CodeText",ExpressionUUID->"50a813f2-b435-4c52-b1fb-f143177b89e8"],
+Cell[236411, 5685, 727, 18, 52, "Input",ExpressionUUID->"0951ca22-c891-4a23-93cb-c83fff3df71a"],
+Cell[237141, 5705, 342, 7, 59, "CodeText",ExpressionUUID->"e999faab-bb41-44ca-930c-9d2ca8721e5c"],
+Cell[CellGroupData[{
+Cell[237508, 5716, 463, 12, 30, "Input",ExpressionUUID->"fcc5b493-0b93-4732-a6f8-4921adb436c1"],
+Cell[237974, 5730, 9724, 253, 389, "Output",ExpressionUUID->"db922d25-ddcb-4c68-a4c7-4c93121c7809"]
 }, Open  ]]
 }
 ]
