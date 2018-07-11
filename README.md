@@ -1,7 +1,7 @@
 ![A feature space plot mapped by a neural net of the top TF-IDF words in the listings colored by relative success (left) and a word cloud of some of the most frequently used words sized and colored by impact (right)][1]
 
 # An Analysis of Word Choice in the Real Estate Industry
-The following post can also be found at: http://community.wolfram.com/groups/-/m/t/1378722?p_p_auth=Bh6aiHWd
+The following can be found as a post at: http://community.wolfram.com/groups/-/m/t/1378722?p_p_auth=Bh6aiHWd
 
 ## Introduction
 The goal of this project is to analyze property descriptions of real estate and identify words that positively or negatively affected the success of a sale. Success of a sale is measured as the percent difference between the listing and selling prices of the property. Data for this project were gathered from MLS through redfin.com and analyzed using Wolfram Mathematica's text analysis functions and neural nets from the Wolfram Neural Net Repository. Through a TF-IDF analysis of the data, clustering functions, and an analysis of frequently used words, correlations between word content and sale success were identified.
