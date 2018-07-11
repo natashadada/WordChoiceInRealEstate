@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    261692,       6236]
-NotebookOptionsPosition[    257329,       6173]
-NotebookOutlinePosition[    257684,       6189]
-CellTagsIndexPosition[    257641,       6186]
+NotebookDataLength[    254442,       6144]
+NotebookOptionsPosition[    249885,       6079]
+NotebookOutlinePosition[    250240,       6095]
+CellTagsIndexPosition[    250197,       6092]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5676,7 +5676,7 @@ Cell[BoxData[
    3.740056591874425*^9, {3.7401660939575787`*^9, 3.740166096109387*^9}, 
    3.740166273673794*^9, {3.740166313589624*^9, 3.7401663146326303`*^9}, 
    3.740267104549862*^9, 3.740267217080064*^9},
- CellLabel->"In[13]:=",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
+ CellLabel->"In[6]:=",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -5687,8 +5687,9 @@ Cell[BoxData[
    ",", "\<\"converted\"\>", ",", "\<\"years\"\>", ",", "\<\"beacon\"\>", 
    ",", "\<\"lot\"\>", ",", "\<\"sf\"\>", ",", "\<\"west\"\>", 
    ",", "\<\"lounge\"\>", ",", "\<\"club\"\>"}], "}"}]], "Output",
- CellChangeTimes->{3.740267217722307*^9, 3.7402672982070103`*^9},
- CellLabel->"Out[13]=",ExpressionUUID->"e5b893b9-b4f9-47ff-ac1e-009aaf563744"]
+ CellChangeTimes->{3.740267217722307*^9, 3.7402672982070103`*^9, 
+  3.7403090520485888`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"3619349a-09ba-4b15-881d-798df8f1baf5"]
 }, Open  ]],
 
 Cell["\<\
@@ -5699,17 +5700,16 @@ successful (worst to best):\
   3.7400566147964077`*^9}},ExpressionUUID->"be08d152-f07d-42a7-818f-\
 93f6f77c8f9e"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"mostPositiveWords", "=", 
-  RowBox[{"First", "/@", 
-   RowBox[{"Select", "[", 
-    RowBox[{"mostFrequentWords", ",", 
-     RowBox[{
+ RowBox[{
+  RowBox[{"mostPositiveWords", "=", 
+   RowBox[{"First", "/@", 
+    RowBox[{"Select", "[", 
+     RowBox[{"mostFrequentWords", ",", 
       RowBox[{
-       RowBox[{"Last", "[", "#", "]"}], ">", " ", "1"}], "&"}]}], 
-    "]"}]}]}]], "Input",
+       RowBox[{
+        RowBox[{"Last", "[", "#", "]"}], ">", " ", "1"}], "&"}]}], "]"}]}]}], 
+  ";"}]], "Input",
  CellChangeTimes->{{3.7398015807642517`*^9, 3.7398015872488422`*^9}, {
    3.739802335471941*^9, 3.7398023378160133`*^9}, {3.739802413186782*^9, 
    3.739802419506762*^9}, {3.7398035382543497`*^9, 3.7398035581468077`*^9}, {
@@ -5717,129 +5717,35 @@ Cell[BoxData[
    3.73990415237527*^9}, {3.739904264154701*^9, 3.739904293073679*^9}, {
    3.740056160255721*^9, 3.740056165901689*^9}, 3.7400563497738037`*^9, 
    3.7400566209925823`*^9, {3.7401663313967*^9, 3.740166331810275*^9}, 
-   3.740267105861898*^9, 3.740267340892521*^9},
- CellLabel->"In[30]:=",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
+   3.740267105861898*^9, 3.740267340892521*^9, 3.7403090190964413`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
+
+Cell["\<\
+Some of the most successful words from least successful to most successful:\
+\>", "CodeText",
+ CellChangeTimes->{{3.7403089608809566`*^9, 
+  3.740308983584434*^9}},ExpressionUUID->"94079a83-a4b1-42ac-9805-\
+e850736f97eb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mostPositiveWords", "[", 
+  RowBox[{"[", 
+   RowBox[{"325", ";;", "388"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.7403089898813343`*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"b98a947b-1ea1-4e9f-a36a-7ec2b87053eb"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"\<\"property\"\>", ",", "\<\"elegant\"\>", 
-   ",", "\<\"neighborhoods\"\>", ",", "\<\"home\"\>", ",", "\<\"rooms\"\>", 
-   ",", "\<\"step\"\>", ",", "\<\"access\"\>", ",", "\<\"bedrooms\"\>", 
-   ",", "\<\"tons\"\>", ",", "\<\"third\"\>", ",", "\<\"gas\"\>", 
-   ",", "\<\"w\"\>", ",", "\<\"blocks\"\>", ",", "\<\"room\"\>", 
-   ",", "\<\"beds\"\>", ",", "\<\"unit\"\>", ",", "\<\"master\"\>", 
-   ",", "\<\"away\"\>", ",", "\<\"enclosed\"\>", ",", "\<\"bathroom\"\>", 
-   ",", "\<\"entire\"\>", ",", "\<\"include\"\>", ",", "\<\"garden\"\>", 
-   ",", "\<\"parlor\"\>", ",", "\<\"fully\"\>", ",", "\<\"pantry\"\>", 
-   ",", "\<\"beach\"\>", ",", "\<\"historic\"\>", ",", "\<\"soaring\"\>", 
-   ",", "\<\"prime\"\>", ",", "\<\"double\"\>", ",", "\<\"transportation\"\>",
-    ",", "\<\"area\"\>", ",", "\<\"rail\"\>", ",", "\<\"plus\"\>", 
-   ",", "\<\"square\"\>", ",", "\<\"outdoor\"\>", ",", "\<\"highways\"\>", 
-   ",", "\<\"incredible\"\>", ",", "\<\"tops\"\>", ",", "\<\"common\"\>", 
-   ",", "\<\"level\"\>", ",", "\<\"backyard\"\>", ",", "\<\"cooking\"\>", 
-   ",", "\<\"routes\"\>", ",", "\<\"door\"\>", ",", "\<\"shaker\"\>", 
-   ",", "\<\"decks\"\>", ",", "\<\"crown\"\>", ",", "\<\"rent\"\>", 
-   ",", "\<\"community\"\>", ",", "\<\"professionally\"\>", 
-   ",", "\<\"spot\"\>", ",", "\<\"deeded\"\>", ",", "\<\"walk\"\>", 
-   ",", "\<\"line\"\>", ",", "\<\"come\"\>", ",", "\<\"living\"\>", 
-   ",", "\<\"bath\"\>", ",", "\<\"windows\"\>", ",", "\<\"top\"\>", 
-   ",", "\<\"investor\"\>", ",", "\<\"ave\"\>", ",", "\<\"duplex\"\>", 
-   ",", "\<\"ceilings\"\>", ",", "\<\"cabinets\"\>", ",", "\<\"rare\"\>", 
-   ",", "\<\"logan\"\>", ",", "\<\"coveted\"\>", ",", "\<\"designed\"\>", 
-   ",", "\<\"island\"\>", ",", "\<\"score\"\>", ",", "\<\"natural\"\>", 
-   ",", "\<\"large\"\>", ",", "\<\"features\"\>", ",", "\<\"complex\"\>", 
-   ",", "\<\"patio\"\>", ",", "\<\"street\"\>", ",", "\<\"surround\"\>", 
-   ",", "\<\"house\"\>", ",", "\<\"south\"\>", ",", "\<\"boston's\"\>", 
-   ",", "\<\"energy\"\>", ",", "\<\"counter\"\>", ",", "\<\"design\"\>", 
-   ",", "\<\"hill\"\>", ",", "\<\"feel\"\>", ",", "\<\"breathtaking\"\>", 
-   ",", "\<\"point\"\>", ",", "\<\"station\"\>", ",", "\<\"floor\"\>", 
-   ",", "\<\"longwood\"\>", ",", "\<\"orange\"\>", ",", "\<\"enter\"\>", 
-   ",", "\<\"enormous\"\>", ",", "\<\"plan\"\>", ",", "\<\"brand\"\>", 
-   ",", "\<\"conditioning\"\>", ",", "\<\"heating\"\>", 
-   ",", "\<\"oversized\"\>", ",", "\<\"heat\"\>", ",", "\<\"maverick\"\>", 
-   ",", "\<\"lobby\"\>", ",", "\<\"finishes\"\>", ",", "\<\"including\"\>", 
-   ",", "\<\"dining\"\>", ",", "\<\"molding\"\>", ",", "\<\"renovation\"\>", 
-   ",", "\<\"outside\"\>", ",", "\<\"village\"\>", ",", "\<\"opens\"\>", 
-   ",", "\<\"today\"\>", ",", "\<\"bed\"\>", ",", "\<\"steel\"\>", 
-   ",", "\<\"located\"\>", ",", "\<\"roof\"\>", ",", "\<\"bedroom\"\>", 
-   ",", "\<\"glass\"\>", ",", "\<\"great\"\>", ",", "\<\"amenities\"\>", 
-   ",", "\<\"counters\"\>", ",", "\<\"beautifully\"\>", ",", "\<\"studio\"\>",
-    ",", "\<\"floors\"\>", ",", "\<\"system\"\>", ",", "\<\"pristine\"\>", 
-   ",", "\<\"d\"\>", ",", "\<\"character\"\>", ",", "\<\"ready\"\>", 
-   ",", "\<\"enjoy\"\>", ",", "\<\"fireplace\"\>", ",", "\<\"kitchen\"\>", 
-   ",", "\<\"hardwood\"\>", ",", "\<\"entrance\"\>", ",", "\<\"excellent\"\>",
-    ",", "\<\"block\"\>", ",", "\<\"pet\"\>", ",", "\<\"abundance\"\>", 
-   ",", "\<\"built-ins\"\>", ",", "\<\"washer\"\>", ",", "\<\"air\"\>", 
-   ",", "\<\"private\"\>", ",", "\<\"space\"\>", ",", "\<\"upstairs\"\>", 
-   ",", "\<\"car\"\>", ",", "\<\"bike\"\>", ",", "\<\"end\"\>", 
-   ",", "\<\"close\"\>", ",", "\<\"countertops\"\>", ",", "\<\"closet\"\>", 
-   ",", "\<\"dryer\"\>", ",", "\<\"desirable\"\>", ",", "\<\"extra\"\>", 
-   ",", "\<\"efficient\"\>", ",", "\<\"breakfast\"\>", 
-   ",", "\<\"spacious\"\>", ",", "\<\"looking\"\>", ",", "\<\"painted\"\>", 
-   ",", "\<\"mbta\"\>", ",", "\<\"easy\"\>", ",", "\<\"contemporary\"\>", 
-   ",", "\<\"minutes\"\>", ",", "\<\"brick\"\>", ",", "\<\"bosch\"\>", 
-   ",", "\<\"ss\"\>", ",", "\<\"time\"\>", ",", "\<\"king\"\>", 
-   ",", "\<\"appliances\"\>", ",", "\<\"comes\"\>", ",", "\<\"throughout\"\>",
-    ",", "\<\"renovated\"\>", ",", "\<\"ceiling\"\>", ",", "\<\"window\"\>", 
-   ",", "\<\"townhouse\"\>", ",", "\<\"maintained\"\>", ",", "\<\"s\"\>", 
-   ",", "\<\"gleaming\"\>", ",", "\<\"entertaining\"\>", ",", "\<\"bonus\"\>",
-    ",", "\<\"beautiful\"\>", ",", "\<\"managed\"\>", 
-   ",", "\<\"completely\"\>", ",", "\<\"hvac\"\>", ",", "\<\"buyer\"\>", 
-   ",", "\<\"short\"\>", ",", "\<\"areas\"\>", ",", "\<\"french\"\>", 
-   ",", "\<\"foods\"\>", ",", "\<\"additional\"\>", ",", "\<\"second\"\>", 
-   ",", "\<\"exposures\"\>", ",", "\<\"c\"\>", ",", "\<\"granite\"\>", 
-   ",", "\<\"closets\"\>", ",", "\<\"flooring\"\>", ",", "\<\"park\"\>", 
-   ",", "\<\"buyers\"\>", ",", "\<\"call\"\>", ",", "\<\"burning\"\>", 
-   ",", "\<\"sought\"\>", ",", "\<\"w/\"\>", ",", "\<\"electric\"\>", 
-   ",", "\<\"layout\"\>", ",", "\<\"tall\"\>", ",", "\<\"sized\"\>", 
-   ",", "\<\"coffee\"\>", ",", "\<\"st\"\>", ",", "\<\"size\"\>", 
-   ",", "\<\"wood\"\>", ",", "\<\"eat\"\>", ",", "\<\"just\"\>", 
-   ",", "\<\"gorgeous\"\>", ",", "\<\"nice\"\>", ",", "\<\"bay\"\>", 
-   ",", "\<\"subway\"\>", ",", "\<\"stop\"\>", ",", "\<\"fee\"\>", 
-   ",", "\<\"purchase\"\>", ",", "\<\"detail\"\>", 
-   ",", "\<\"conveniently\"\>", ",", "\<\"driveway\"\>", ",", "\<\"huge\"\>", 
-   ",", "\<\"marble\"\>", ",", "\<\"office\"\>", ",", "\<\"open\"\>", 
-   ",", "\<\"vanity\"\>", ",", "\<\"offer\"\>", ",", "\<\"cabinetry\"\>", 
-   ",", "\<\"chance\"\>", ",", "\<\"vibrant\"\>", ",", "\<\"restaurants\"\>", 
-   ",", "\<\"perfectly\"\>", ",", "\<\"friendly\"\>", ",", "\<\"laundry\"\>", 
-   ",", "\<\"commuter\"\>", ",", "\<\"use\"\>", ",", "\<\"live\"\>", 
-   ",", "\<\"lots\"\>", ",", "\<\"condominium\"\>", ",", "\<\"stainless\"\>", 
-   ",", "\<\"small\"\>", ",", "\<\"storage\"\>", ",", "\<\"lighting\"\>", 
-   ",", "\<\"deck\"\>", ",", "\<\"shopping\"\>", ",", "\<\"dorchester\"\>", 
-   ",", "\<\"recently\"\>", ",", "\<\"newbury\"\>", ",", "\<\"chic\"\>", 
-   ",", "\<\"sleek\"\>", ",", "\<\"makes\"\>", ",", "\<\"amazing\"\>", 
-   ",", "\<\"exclusive\"\>", ",", "\<\"addition\"\>", ",", "\<\"leads\"\>", 
-   ",", "\<\"hot\"\>", ",", "\<\"ideal\"\>", ",", "\<\"featuring\"\>", 
-   ",", "\<\"market\"\>", ",", "\<\"quiet\"\>", ",", "\<\"skylights\"\>", 
-   ",", "\<\"ample\"\>", ",", "\<\"condo\"\>", ",", "\<\"location\"\>", 
-   ",", "\<\"high-end\"\>", ",", "\<\"east\"\>", ",", "\<\"streets\"\>", 
-   ",", "\<\"cabinet\"\>", ",", "\<\"tiled\"\>", ",", "\<\"perfect\"\>", 
-   ",", "\<\"red\"\>", ",", "\<\"heart\"\>", ",", "\<\"rights\"\>", 
-   ",", "\<\"bright\"\>", ",", "\<\"convenient\"\>", ",", "\<\"chef's\"\>", 
-   ",", "\<\"ac\"\>", ",", "\<\"ashmont\"\>", ",", "\<\"details\"\>", 
-   ",", "\<\"skyline\"\>", ",", "\<\"near\"\>", ",", "\<\"boasts\"\>", 
-   ",", "\<\"hottest\"\>", ",", "\<\"upper\"\>", ",", "\<\"provides\"\>", 
-   ",", "\<\"inviting\"\>", ",", "\<\"central\"\>", 
-   ",", "\<\"charlestown\"\>", ",", "\<\"modern\"\>", ",", "\<\"airport\"\>", 
-   ",", "\<\"yard\"\>", ",", "\<\"offers\"\>", ",", "\<\"sun\"\>", 
-   ",", "\<\"shops\"\>", ",", "\<\"lovely\"\>", ",", "\<\"neighborhood\"\>", 
-   ",", "\<\"t\"\>", ",", "\<\"exposed\"\>", ",", "\<\"generous\"\>", 
-   ",", "\<\"occupied\"\>", ",", "\<\"association\"\>", ",", "\<\"highly\"\>",
-    ",", "\<\"charm\"\>", ",", "\<\"moldings\"\>", ",", "\<\"distance\"\>", 
-   ",", "\<\"basement\"\>", ",", "\<\"light\"\>", ",", "\<\"low\"\>", 
-   ",", "\<\"original\"\>", ",", "\<\"bremen\"\>", ",", "\<\"spring\"\>", 
-   ",", "\<\"plenty\"\>", ",", "\<\"sunny\"\>", ",", "\<\"lights\"\>", 
-   ",", "\<\"life\"\>", ",", "\<\"miss\"\>", ",", "\<\"updated\"\>", 
-   ",", "\<\"please\"\>", ",", "\<\"height\"\>", ",", "\<\"maple\"\>", 
-   ",", "\<\"/c,\"\>", ",", "\<\"classic\"\>", ",", "\<\"parks\"\>", 
-   ",", "\<\"main\"\>", ",", "\<\"sun-filled\"\>", ",", "\<\"stained\"\>", 
-   ",", "\<\"tile\"\>", ",", "\<\"doors\"\>", ",", "\<\"front\"\>", 
-   ",", "\<\"seating\"\>", ",", "\<\"gem\"\>", ",", "\<\"white\"\>", 
-   ",", "\<\"urban\"\>", ",", "\<\"wonderful\"\>", ",", "\<\"sale\"\>", 
-   ",", "\<\"welcome\"\>", ",", "\<\"best\"\>", ",", "\<\"wide\"\>", 
-   ",", "\<\"summer\"\>", ",", "\<\"green\"\>", ",", "\<\"multiple\"\>", 
-   ",", "\<\"in-unit\"\>", ",", "\<\"move\"\>", ",", "\<\"sunday\"\>", 
-   ",", "\<\"stove\"\>", ",", "\<\"cambridge\"\>", ",", "\<\"recessed\"\>", 
+  RowBox[{"\<\"sun-filled\"\>", ",", "\<\"stained\"\>", ",", "\<\"tile\"\>", 
+   ",", "\<\"doors\"\>", ",", "\<\"front\"\>", ",", "\<\"seating\"\>", 
+   ",", "\<\"gem\"\>", ",", "\<\"white\"\>", ",", "\<\"urban\"\>", 
+   ",", "\<\"wonderful\"\>", ",", "\<\"sale\"\>", ",", "\<\"welcome\"\>", 
+   ",", "\<\"best\"\>", ",", "\<\"wide\"\>", ",", "\<\"summer\"\>", 
+   ",", "\<\"green\"\>", ",", "\<\"multiple\"\>", ",", "\<\"in-unit\"\>", 
+   ",", "\<\"move\"\>", ",", "\<\"sunday\"\>", ",", "\<\"stove\"\>", 
+   ",", "\<\"cambridge\"\>", ",", "\<\"recessed\"\>", 
    ",", "\<\"backsplash\"\>", ",", "\<\"exposure\"\>", 
    ",", "\<\"abundant\"\>", ",", "\<\"savin\"\>", ",", "\<\"landscaped\"\>", 
    ",", "\<\"tree-lined\"\>", ",", "\<\"right\"\>", ",", "\<\"rear\"\>", 
@@ -5855,8 +5761,8 @@ Cell[BoxData[
    ",", "\<\"houses\"\>", ",", "\<\"march\"\>", ",", "\<\"mantel\"\>", 
    ",", "\<\"tuesday\"\>", ",", "\<\"directly\"\>", ",", "\<\"copley\"\>"}], 
   "}"}]], "Output",
- CellChangeTimes->{3.7402673421213007`*^9, 3.740267413827098*^9},
- CellLabel->"Out[30]=",ExpressionUUID->"9633b7f0-6c5f-42c4-adb2-fa1293095abd"]
+ CellChangeTimes->{3.74030905517894*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"4f767069-577b-4b3f-b25b-ed8252e2cbc5"]
 }, Open  ]],
 
 Cell["A selection of some of the most influential words:", "CodeText",
@@ -6172,7 +6078,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{799, 738},
-WindowMargins->{{Automatic, 292}, {Automatic, 21}},
+WindowMargins->{{Automatic, 151}, {Automatic, 21}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2018)",
 StyleDefinitions->"Default.nb"
@@ -6219,24 +6125,26 @@ Cell[14497, 367, 217907, 5281, 377, 194961, 4904, "CachedBoxData", "BoxData", "O
 }, Open  ]],
 Cell[232419, 5651, 259, 6, 38, "CodeText",ExpressionUUID->"83e15295-33f1-4737-b9dd-c49ac78a514c"],
 Cell[CellGroupData[{
-Cell[232703, 5661, 930, 17, 30, "Input",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
-Cell[233636, 5680, 688, 10, 56, "Output",ExpressionUUID->"e5b893b9-b4f9-47ff-ac1e-009aaf563744"]
+Cell[232703, 5661, 929, 17, 30, "Input",ExpressionUUID->"685ed29c-5252-4da6-b40b-4f84b609aa73"],
+Cell[233635, 5680, 714, 11, 56, "Output",ExpressionUUID->"3619349a-09ba-4b15-881d-798df8f1baf5"]
 }, Open  ]],
-Cell[234339, 5693, 255, 6, 38, "CodeText",ExpressionUUID->"be08d152-f07d-42a7-818f-93f6f77c8f9e"],
+Cell[234364, 5694, 255, 6, 38, "CodeText",ExpressionUUID->"be08d152-f07d-42a7-818f-93f6f77c8f9e"],
+Cell[234622, 5702, 947, 18, 30, "Input",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
+Cell[235572, 5722, 231, 5, 38, "CodeText",ExpressionUUID->"94079a83-a4b1-42ac-9805-e850736f97eb"],
 Cell[CellGroupData[{
-Cell[234619, 5703, 902, 17, 30, "Input",ExpressionUUID->"ccbc7a8c-6797-4305-a9b5-0459dcce908b"],
-Cell[235524, 5722, 9746, 136, 833, "Output",ExpressionUUID->"9633b7f0-6c5f-42c4-adb2-fa1293095abd"]
+Cell[235828, 5731, 244, 5, 30, "Input",ExpressionUUID->"b98a947b-1ea1-4e9f-a36a-7ec2b87053eb"],
+Cell[236075, 5738, 1751, 26, 195, "Output",ExpressionUUID->"4f767069-577b-4b3f-b25b-ed8252e2cbc5"]
 }, Open  ]],
-Cell[245285, 5861, 221, 3, 38, "CodeText",ExpressionUUID->"d467541d-4770-4c1f-8506-5a2cb48d0a5e"],
-Cell[245509, 5866, 843, 16, 30, "Input",ExpressionUUID->"0b1f23c3-fcdd-43c7-ab7f-5916bd7afc31"],
-Cell[246355, 5884, 228, 5, 38, "CodeText",ExpressionUUID->"751bfa03-ec70-4916-8442-d985b6714548"],
-Cell[246586, 5891, 1288, 31, 94, "Input",ExpressionUUID->"88c8953b-e303-4b85-8bb1-34198c1c64af"],
-Cell[247877, 5924, 252, 6, 38, "CodeText",ExpressionUUID->"50a813f2-b435-4c52-b1fb-f143177b89e8"],
-Cell[248132, 5932, 930, 22, 73, "Input",ExpressionUUID->"0951ca22-c891-4a23-93cb-c83fff3df71a"],
-Cell[249065, 5956, 370, 7, 59, "CodeText",ExpressionUUID->"e999faab-bb41-44ca-930c-9d2ca8721e5c"],
+Cell[237841, 5767, 221, 3, 38, "CodeText",ExpressionUUID->"d467541d-4770-4c1f-8506-5a2cb48d0a5e"],
+Cell[238065, 5772, 843, 16, 30, "Input",ExpressionUUID->"0b1f23c3-fcdd-43c7-ab7f-5916bd7afc31"],
+Cell[238911, 5790, 228, 5, 38, "CodeText",ExpressionUUID->"751bfa03-ec70-4916-8442-d985b6714548"],
+Cell[239142, 5797, 1288, 31, 94, "Input",ExpressionUUID->"88c8953b-e303-4b85-8bb1-34198c1c64af"],
+Cell[240433, 5830, 252, 6, 38, "CodeText",ExpressionUUID->"50a813f2-b435-4c52-b1fb-f143177b89e8"],
+Cell[240688, 5838, 930, 22, 73, "Input",ExpressionUUID->"0951ca22-c891-4a23-93cb-c83fff3df71a"],
+Cell[241621, 5862, 370, 7, 59, "CodeText",ExpressionUUID->"e999faab-bb41-44ca-930c-9d2ca8721e5c"],
 Cell[CellGroupData[{
-Cell[249460, 5967, 463, 12, 30, "Input",ExpressionUUID->"fcc5b493-0b93-4732-a6f8-4921adb436c1"],
-Cell[249926, 5981, 7387, 189, 454, "Output",ExpressionUUID->"b101b66e-6252-4518-b975-1086eb60a71d"]
+Cell[242016, 5873, 463, 12, 30, "Input",ExpressionUUID->"fcc5b493-0b93-4732-a6f8-4921adb436c1"],
+Cell[242482, 5887, 7387, 189, 454, "Output",ExpressionUUID->"b101b66e-6252-4518-b975-1086eb60a71d"]
 }, Open  ]]
 }
 ]
